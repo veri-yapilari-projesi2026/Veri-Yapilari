@@ -5,10 +5,10 @@ import java.util.Scanner;
 
     public class StudentRecordManagement{
 
-        LinkedList<Record> list;
+        LinkedList<Record> list; // Değişkenin oluşturulduğu yer.
 
         public StudentRecordManagement(){
-            list = new LinkedList<>();
+            list = new LinkedList<>(); // Değişkenin gerçekten boş bir liste oluşturulduktan sonra kendisiyle bağlantısının kurulduğu yer.
         }
 
         public void add(Record record){
