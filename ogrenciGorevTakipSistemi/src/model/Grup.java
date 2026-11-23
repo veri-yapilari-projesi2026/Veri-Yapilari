@@ -1,5 +1,6 @@
 package ogrenciGorevTakipSistemi.src.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Grup {
@@ -10,47 +11,53 @@ public class Grup {
 
     ArrayList<Gorev> gorevler = new ArrayList<>();
     ArrayList<GrupUyesi> uyeler = new ArrayList<>();
-    GorevDurumu gorevDurumu = new GorevDurumu();
+    GorevDurumu baslamadiGorevDurumu = new GorevDurumu("baslamadi");
+    GorevDurumu yapiliyorGorevDurumu = new GorevDurumu("yapiliyor");
+    GorevDurumu bittiGorevDurumu = new GorevDurumu("bitti");
     GorevGuncelle gorevGuncelle = new GorevGuncelle();
-    GrupUyesi grupUyesi = new GrupUyesi();
-    Gorev gorev = new Gorev();
 
 
+    Gorev gorevornek1 = new Gorev("BirinciGrup", 20, LocalDate.of(2026, 12, 15));
+    Gorev gorevornek2 = new Gorev("İkinciGrup", 21, LocalDate.of(2026, 12, 15));
+    Gorev gorevornek3 = new Gorev("ÜçüncüGrup", 22, LocalDate.of(2026, 12, 15));
+    Gorev gorevornek4 = new Gorev("DördüncüGrup", 24, LocalDate.of(2026, 12, 15));
 
-    public void gorevEKle(Gorev gorev){
-        this.gorev = gorev;
+
+    public void gorevEKle(int gorevNo, String gorevAdi, LocalDate teslimTarihi){
+        gorevler.add(new Gorev(gorevAdi, gorevNo, teslimTarihi));
     }
 
-    public void gorevSil(int gorevNo){
-        this.gorev.gorevNo = gorevNo;
+    public void gorevSil(){
     }
 
-    public void gorevAra(int gorevNo){
-        this.gorev.gorevNo = gorevNo;
+    public void gorevAra(){
     }
 
-    public void gorevSirala(Gorev gorev){
-        this.gorev = gorev;
+    public void gorevSirala(){
     }
 
     public void gorevDurumuGeriAl(int gorevNo, GorevDurumu gorevDurumu){
-        this.gorev.gorevNo = gorevNo;
-        this.gorevDurumu = gorevDurumu;
     }
 
-    public void gorevGuncelle(int gorevNo){
-        this.gorev.gorevNo = gorevNo;
+    public void gorevGuncelle(){
     }
 
-    public void uyeEkle(int grupNo, String uyeAdi){
-        this.grupNo = grupNo;
+    public void uyeEkle(int uyeNo, String uyeAdi){
+        uyeler.add(new GrupUyesi(uyeNo, uyeAdi));
 
     }
+
+    public void uyeSil(int uyeNo){
+        for (int i = 0; i < uyeler.size(); i++) {
+        if (uyeler.get(i).uyeNo == uyeNo) {
+            uyeler.remove(i);
+            break;
+            }
+        }
+    }
+    // public void gorevEKle(int gorevNo, String gorevAdi, LocalDate teslimTarihi){
+
     
-    public void uyeSil(int grupNo, int uyeNo){
-        this.grupNo = grupNo;
-        this.grupUyesi.uyeNo = uyeNo;
-    }
 }
 
 
