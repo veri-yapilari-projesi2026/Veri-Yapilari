@@ -6,21 +6,19 @@ public class Gorev {
     String gorevAdi;
     public int gorevNo; 
     LocalDate teslimTarihi;
+    public GorevDurumu gorevDurumu;
 
-    public Gorev(String gorevAdi, int gorevNo, LocalDate teslimTarihi){
+    public Gorev(String gorevAdi, int gorevNo, LocalDate teslimTarihi, GorevDurumu gorevDurumu){
         this.gorevAdi = gorevAdi;
         this.gorevNo = gorevNo;
         this.teslimTarihi = teslimTarihi;
+        this.gorevDurumu = GorevDurumu.BASLAMADI;
+    }
+
+    public void gorevGuncelle(GorevDurumu yeniGorevDurumu){
+        this.gorevDurumu = yeniGorevDurumu;
     }
 }
 
-class GorevDurumu{
-    String gorevDurumu;
-    GorevDurumu(String gorevDurumu){
-        this.gorevDurumu = gorevDurumu;
-    }
-}
 
-class GorevGuncelle{
 
-}

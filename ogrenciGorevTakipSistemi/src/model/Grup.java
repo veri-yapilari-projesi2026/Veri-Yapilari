@@ -11,16 +11,12 @@ public class Grup {
 
     ArrayList<Gorev> gorevler = new ArrayList<>();
     ArrayList<GrupUyesi> uyeler = new ArrayList<>();
-    GorevDurumu baslamadiGorevDurumu = new GorevDurumu("baslamadi");
-    GorevDurumu yapiliyorGorevDurumu = new GorevDurumu("yapiliyor");
-    GorevDurumu bittiGorevDurumu = new GorevDurumu("bitti");
-    GorevGuncelle gorevGuncelle = new GorevGuncelle();
+    GorevDurumu gorevDurumu;    
 
-
-    Gorev gorevornek1 = new Gorev("BirinciGrup", 20, LocalDate.of(2026, 12, 15));
-    Gorev gorevornek2 = new Gorev("İkinciGrup", 21, LocalDate.of(2026, 12, 15));
-    Gorev gorevornek3 = new Gorev("ÜçüncüGrup", 22, LocalDate.of(2026, 12, 15));
-    Gorev gorevornek4 = new Gorev("DördüncüGrup", 24, LocalDate.of(2026, 12, 15));
+    Gorev gorevornek1 = new Gorev("BirinciGrup", 20, LocalDate.of(2026, 12, 15), gorevDurumu.BASLAMADI);
+    Gorev gorevornek2 = new Gorev("İkinciGrup", 21, LocalDate.of(2026, 12, 15), gorevDurumu.BASLAMADI);
+    Gorev gorevornek3 = new Gorev("ÜçüncüGrup", 22, LocalDate.of(2026, 12, 15), gorevDurumu.BASLAMADI);
+    Gorev gorevornek4 = new Gorev("DördüncüGrup", 24, LocalDate.of(2026, 12, 15), gorevDurumu.BASLAMADI);
 
 
     public void gorevEKle(int gorevNo, String gorevAdi, LocalDate teslimTarihi){
@@ -57,6 +53,12 @@ public class Grup {
     }
     // public void gorevEKle(int gorevNo, String gorevAdi, LocalDate teslimTarihi){
 
+    public void main(String[] args) {
+        System.out.println(gorevornek1);
+        System.out.println(gorevornek2);
+        System.out.println(gorevornek3);
+        System.out.println(gorevornek4);
+    }
     
 }
 
