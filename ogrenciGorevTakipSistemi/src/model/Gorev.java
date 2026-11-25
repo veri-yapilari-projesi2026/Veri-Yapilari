@@ -8,9 +8,9 @@ public class Gorev {
     LocalDate teslimTarihi;
     public GorevDurumu gorevDurumu;
 
-    public Gorev(String gorevAdi, int gorevNo, LocalDate teslimTarihi, GorevDurumu gorevDurumu){
-        this.gorevAdi = gorevAdi;
+    public Gorev(int gorevNo, String gorevAdi, LocalDate teslimTarihi, GorevDurumu gorevDurumu){
         this.gorevNo = gorevNo;
+        this.gorevAdi = gorevAdi;
         this.teslimTarihi = teslimTarihi;
         this.gorevDurumu = GorevDurumu.BASLAMADI;
     }
